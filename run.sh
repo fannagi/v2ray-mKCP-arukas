@@ -20,4 +20,4 @@ cat /etc/v2ray/config.json
 	-o PermitRootLogin=yes \
 	-o Port=${SSH_PORT}) &
 
-/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
+v2ray/v2ray -config=/v2ray/config.json

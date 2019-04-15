@@ -2,8 +2,6 @@ FROM alpine:latest
 
 ENV UUID=dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce VER=4.18.0
 
-COPY config.json /etc/v2ray/config.json
-
 RUN apk add --no-cache --virtual .build-deps bash ca-certificates curl openssh-server \
  && ssh-keygen -A \
  && mkdir -m 777 /v2ray \
@@ -18,6 +16,7 @@ RUN apk add --no-cache --virtual .build-deps bash ca-certificates curl openssh-s
 ENV ROOT_PASSWORD=alpine
 ENV SSH_PORT=7777
 
+COPY config.json /v2ray/config.json
 ADD run.sh /run.sh
 
 RUN chmod +x /run.sh
