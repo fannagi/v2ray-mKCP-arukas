@@ -12,7 +12,7 @@ echo "root:${ROOT_PASSWORD}" | chpasswd
 
 echo "Start Success !"
 
-sed -i "s/uuid/$UUID/g" /etc/v2ray/config.json
+sed -i "s/uuid/$UUID/g" /v2ray/config.json
 
 cat /etc/v2ray/config.json
 
