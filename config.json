@@ -45,6 +45,32 @@
 					}
 				}
 			}
+		},
+		{
+      "tag": "ws",
+			"port": 80,
+			"listen": "0.0.0.0",
+			"protocol": "vmess",
+			"settings": {
+				"clients": [{
+						"id": "uuid",
+						"level": 0,
+						"alterId": 64,
+						"email": "admin@test.com"
+					},
+					{
+						"id": "dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce",
+						"level": 0,
+						"alterId": 64,
+						"email": "test@test.com"
+					}]
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/ws"
+				}
+			}
 		}
 	],
 	"policy": {
