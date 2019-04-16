@@ -2,7 +2,7 @@
 
 rm -f /etc/motd
 cat >>/etc/motd <<EOF
-Linux Version : $(cat /etc/redhat-release)
+Alpine Linux Version : $(cat /etc/alpine-release)
 Kernel Version : $(uname -r)
 Hostname : $(uname -n)
 Enjoy your Docker-Linux Node !
@@ -13,8 +13,6 @@ echo "root:${ROOT_PASSWORD}" | chpasswd
 echo "Start Success !"
 
 sed -i "s/uuid/$UUID/g" /v2ray/config.json
-
-cat /v2ray/config.json
 
 (/usr/sbin/sshd -D -e \
 	-o PermitRootLogin=yes \
