@@ -1,6 +1,8 @@
 {
 	"log": {
-		"loglevel": "none"
+		"loglevel": "warning",
+		"access": "/v2ray/access.log",
+    "error": "/v2ray/error.log"
 	},
 	"inbounds": [{
 			"listen": "127.0.0.1",
@@ -90,8 +92,7 @@
 	},
 	"outbounds": [{
 		"protocol": "freedom",
-		"settings": {},
-		"tag": "direct"
+		"settings": {}
 	}],
 	"routing": {
 		"rules": [{

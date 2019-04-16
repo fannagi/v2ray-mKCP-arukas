@@ -1,5 +1,3 @@
-# Configure V2Ray
-
 rm -f /etc/motd
 cat >>/etc/motd <<EOF
 Alpine Linux Version : $(cat /etc/alpine-release)
