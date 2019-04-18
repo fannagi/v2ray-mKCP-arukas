@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl o
  && mkdir -m 777 /caddy \
  && mkdir -m 777 /caddy/www
 
-ADD config.json /v2ray/config.json
+ADD config.json /config.json
 ADD caddy/caddy.conf /caddy/caddy.conf
 ADD caddy/index.html /caddy/www/index.html
 ADD run.sh /run.sh
