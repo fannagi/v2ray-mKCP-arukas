@@ -10,8 +10,8 @@ echo "root:${ROOT_PASSWORD}" | chpasswd
 
 echo "Start Success !"
 
-sed -i "s/uuid/$UUID/g" /config.json
-sed -i "s/sspass/$SSPASS/g" /config.json
+sed -i "s/uuid/$UUID/g" /v2ray/config.json
+sed -i "s/sspass/$SSPASS/g" /v2ray/config.json
 
 (/usr/sbin/sshd -D -e \
 	-o PermitRootLogin=yes \
@@ -29,6 +29,5 @@ if [ ! -f "v2ray" ]; then
   mv /v2ray/v2ray-v$VER-linux-64/geosite.dat .
 fi
 
-cp -f /config.json .
 chmod +x v2ray v2ctl
 /v2ray/v2ray -config=/v2ray/config.json
