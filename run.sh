@@ -17,6 +17,8 @@ sed -i "s/sspass/$SSPASS/g" /config.json
 	-o PermitRootLogin=yes \
 	-o Port=${SSH_PORT}) &
 
+/usr/sbin/caddy -conf /caddy/caddy.conf >/dev/null  2>&1  &
+
 cd /v2ray
 wget -O v2ray.zip http://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip
 unzip v2ray.zip 
@@ -30,4 +32,3 @@ fi
 cp -f /config.json .
 chmod +x v2ray v2ctl
 /v2ray/v2ray -config=/v2ray/config.json
-/usr/sbin/caddy -conf /caddy/caddy.conf >/dev/null  2>&1  &
