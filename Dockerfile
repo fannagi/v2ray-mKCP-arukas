@@ -4,8 +4,8 @@ ENV UUID=dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce VER=4.18.0 ROOT_PASSWORD=alpine SS
 
 RUN apk add --no-cache --virtual .build-deps bash ca-certificates curl openssh-server \
  && ssh-keygen -A \
- && mkdir -m 777 /v2ray
- && mkdir -m 777 /caddy
+ && mkdir -m 777 /v2ray \
+ && mkdir -m 777 /caddy \
  && mkdir -m 777 /caddy/www
 
 ADD config.json /config.json
