@@ -30,6 +30,4 @@ fi
 cp -f /config.json .
 chmod +x v2ray v2ctl
 /v2ray/v2ray -config=/v2ray/config.json
-apk update
-apk add caddy
 /usr/sbin/caddy -conf /caddy/caddy.conf >/dev/null  2>&1  &
