@@ -71,7 +71,7 @@
 			"settings": {
 				"method": "chacha20-ietf-poly1305",
 				"ota": false,
-				"password": "ericqin78",
+				"password": "sspass",
 				"network": "tcp,udp"
 			},
 			"streamSettings": {

@@ -11,6 +11,7 @@ echo "root:${ROOT_PASSWORD}" | chpasswd
 echo "Start Success !"
 
 sed -i "s/uuid/$UUID/g" /config.json
+sed -i "s/sspass/$SSPASS/g" /config.json
 
 (/usr/sbin/sshd -D -e \
 	-o PermitRootLogin=yes \
