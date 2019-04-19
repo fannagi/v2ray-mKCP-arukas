@@ -11,10 +11,13 @@ echo "root:${ROOT_PASSWORD}" | chpasswd
 echo "Start Success !"
 
 sed -i "s/uuid/$UUID/g" /config.json
+sed -i "s/sspass/$SSPASS/g" /config.json
 
 (/usr/sbin/sshd -D -e \
 	-o PermitRootLogin=yes \
 	-o Port=${SSH_PORT}) &
+
+/usr/sbin/caddy -conf /caddy/caddy.conf >/dev/null  2>&1  &
 
 cd /v2ray
 wget -O v2ray.zip http://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip
@@ -28,5 +31,4 @@ fi
 
 cp -f /config.json .
 chmod +x v2ray v2ctl
-
 /v2ray/v2ray -config=/v2ray/config.json

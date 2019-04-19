@@ -49,9 +49,39 @@
 			}
 		},
 		{
+			"port": 10001,
+			"listen": "127.0.0.1",
+			"protocol": "dokodemo-door",
+			"tag": "wsdoko",
+			"settings": {
+				"address": "v1.mux.cool",
+				"followRedirect": false,
+				"network": "tcp"
+			},
+			"streamSettings": {
+				"network": "ws",
+				"wsSettings": {
+					"path": "/shadow"
+				}
+			}
+		},
+		{
+			"port": 9015,
+			"protocol": "shadowsocks",
+			"settings": {
+				"method": "chacha20-ietf-poly1305",
+				"ota": false,
+				"password": "sspass",
+				"network": "tcp,udp"
+			},
+			"streamSettings": {
+				"network": "domainsocket"
+			}
+		},
+		{
       "tag": "ws",
-			"port": 80,
-			"listen": "0.0.0.0",
+			"port": 10000,
+			"listen": "127.0.0.1",
 			"protocol": "vmess",
 			"settings": {
 				"clients": [{
@@ -92,8 +122,26 @@
 	},
 	"outbounds": [{
 		"protocol": "freedom",
-		"settings": {}
-	}],
+		"settings": {},
+		"tag": "direct"
+	},
+		{
+			"protocol": "blackhole",
+			"settings": {},
+			"tag": "blocked"
+		},
+		{
+			"protocol": "freedom",
+			"tag": "ssmux",
+			"streamSettings": {
+				"network": "domainsocket"
+			}
+		}],
+  "transport": {
+		"dsSettings": {
+			"path": "/v2ray/ss-loop.sock"
+		}
+	},
 	"routing": {
 		"rules": [{
 				"inboundTag": [
@@ -101,6 +149,13 @@
 				],
 				"outboundTag": "api",
 				"type": "field"
+			},
+			{
+				"type": "field",
+				"inboundTag": [
+					"wsdoko"
+				],
+				"outboundTag": "ssmux"
 			},
 			{
 				"type": "field",
