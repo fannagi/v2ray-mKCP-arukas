@@ -11,7 +11,7 @@ RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl o
 ADD config.json /config.json
 ADD files/caddy.conf /files/caddy.conf
 ADD files/authorized_keys /etc/ssh/authorized_keys
-chmod 600 /etc/ssh/authorized_keys
+RUN chmod 600 /etc/ssh/authorized_keys
 ADD files/sshd_config /etc/ssh/sshd_config
 ADD files/index.html /files/www/index.html
 ADD run.sh /run.sh
