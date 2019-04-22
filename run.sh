@@ -13,9 +13,10 @@ echo "Start Success !"
 sed -i "s/uuid/$UUID/g" /config.json
 sed -i "s/sspass/$SSPASS/g" /config.json
 
-(/usr/sbin/sshd -D -e \
-	-o PermitRootLogin=yes \
-	-o Port=${SSH_PORT}) &
+#(/usr/sbin/sshd -D -e \
+#	-o PermitRootLogin=yes \
+#	-o Port=${SSH_PORT}) &
+/usr/sbin/sshd -D -e &
 
 /usr/sbin/caddy -conf /caddy/caddy.conf >/dev/null  2>&1  &
 
