@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV UUID=uuid1 ROOT_PASSWORD=alpine SSPASS=sspass UU1ID=mp UU2ID=wj UU3ID=wsl UU4ID=dxb UU5ID=ycz UU6ID=test
+ENV UUID=uuid1 ROOT_PASSWORD=alpine SSPASS=sspass UUID1=mp UUID2=wj UUID3=wsl UUID4=dxb UUID5=ycz UUID6=test
 
 RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl openssh-server openssh-sftp-server caddy \
  && ssh-keygen -A \
