@@ -9,12 +9,12 @@ EOF
 echo "root:${ROOT_PASSWORD}" | chpasswd
 
 sed -i "s/uuid/$UUID/g" /etc/v2ray/config.json
-sed -i "s/uu1id/$UUID1/g" /etc/v2ray/config.json
-sed -i "s/uu2id/$UUID2/g" /etc/v2ray/config.json
-sed -i "s/uu3id/$UUID3/g" /etc/v2ray/config.json
-sed -i "s/uu4id/$UUID4/g" /etc/v2ray/config.json
-sed -i "s/uu5id/$UUID5/g" /etc/v2ray/config.json
-sed -i "s/uu6id/$UUID6/g" /etc/v2ray/config.json
+sed -i "s/uu1id/$UU1ID/g" /etc/v2ray/config.json
+sed -i "s/uu2id/$UU2ID/g" /etc/v2ray/config.json
+sed -i "s/uu3id/$UU3ID/g" /etc/v2ray/config.json
+sed -i "s/uu4id/$UU4ID/g" /etc/v2ray/config.json
+sed -i "s/uu5id/$UU5ID/g" /etc/v2ray/config.json
+sed -i "s/uu6id/$UU6ID/g" /etc/v2ray/config.json
 sed -i "s/sspass/$SSPASS/g" /etc/v2ray/config.json
 
 /usr/sbin/sshd -D -e &
