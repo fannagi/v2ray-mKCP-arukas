@@ -1,8 +1,8 @@
 {
 	"log": {
 		"loglevel": "warning",
-		"access": "/var/log/access.log",
-    "error": "/var/log/error.log"
+		"access": "/v2ray/access.log",
+    "error": "/v2ray/error.log"
 	},
 	"inbounds": [{
 			"listen": "127.0.0.1",
@@ -91,40 +91,10 @@
 						"email": "admin@test.com"
 					},
 					{
-						"id": "uu6id",
+						"id": "dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce",
 						"level": 0,
 						"alterId": 64,
 						"email": "test@test.com"
-					},
-					{
-						"id": "uu1id",
-						"level": 0,
-						"alterId": 64,
-						"email": "mp@test.com"
-					},
-					{
-						"id": "uu2id",
-						"level": 0,
-						"alterId": 64,
-						"email": "wj@test.com"
-					},
-					{
-						"id": "uu3id",
-						"level": 0,
-						"alterId": 64,
-						"email": "wsl@test.com"
-					},
-					{
-						"id": "uu4id",
-						"level": 0,
-						"alterId": 64,
-						"email": "dxb@test.com"
-					},
-					{
-						"id": "uu5id",
-						"level": 0,
-						"alterId": 64,
-						"email": "ycz@test.com"
 					}]
 			},
 			"streamSettings": {
