@@ -1,6 +1,6 @@
 {
 	"log": {
-		"loglevel": "info",
+		"loglevel": "warning",
 		"access": "/etc/v2ray/access.log",
     "error": "/etc/v2ray/error.log"
 	},
