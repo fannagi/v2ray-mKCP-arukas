@@ -9,6 +9,12 @@ EOF
 echo "root:${ROOT_PASSWORD}" | chpasswd
 
 sed -i "s/uuid/$UUID/g" /etc/v2ray/config.json
+sed -i "s/uu1id/$UU1ID/g" /etc/v2ray/config.json
+sed -i "s/uu2id/$UU2ID/g" /etc/v2ray/config.json
+sed -i "s/uu3id/$UU3ID/g" /etc/v2ray/config.json
+sed -i "s/uu4id/$UU4ID/g" /etc/v2ray/config.json
+sed -i "s/uu5id/$UU5ID/g" /etc/v2ray/config.json
+sed -i "s/uu6id/$UU6ID/g" /etc/v2ray/config.json
 sed -i "s/sspass/$SSPASS/g" /etc/v2ray/config.json
 
 #(/usr/sbin/sshd -D -e \
@@ -24,12 +30,12 @@ unzip v2ray.zip "v2ctl" -d /usr/bin/v2ray/
 unzip v2ray.zip "geosite.dat" -d /usr/bin/v2ray/
 unzip v2ray.zip "geoip.dat" -d /usr/bin/v2ray/
 
-#if [ ! -f "v2ray" ]; then
-#  mv /v2ray/v2ray-v$VER-linux-64/v2ray .
-#  mv /v2ray/v2ray-v$VER-linux-64/v2ctl .
-#  mv /v2ray/v2ray-v$VER-linux-64/geoip.dat .
-#  mv /v2ray/v2ray-v$VER-linux-64/geosite.dat .
-#fi
+if [ ! -f "/usr/bin/v2ray/v2ray" ]; then
+ unzip v2ray.zip "v2ray-v$VER-linux-64\v2ray" -d /usr/bin/v2ray/
+ unzip v2ray.zip "v2ray-v$VER-linux-64\v2ctl" -d /usr/bin/v2ray/
+ unzip v2ray.zip "v2ray-v$VER-linux-64\geosite.dat" -d /usr/bin/v2ray/
+ unzip v2ray.zip "v2ray-v$VER-linux-64\geoip.dat" -d /usr/bin/v2ray/
+fi
 cd /usr/bin/v2ray
 #cp -f /config.json .
 chmod +x v2ray v2ctl

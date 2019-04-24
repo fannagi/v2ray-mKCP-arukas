@@ -25,10 +25,40 @@
 						"email": "admin@test.com"
 					},
 					{
-						"id": "dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce",
+						"id": "uu6id",
 						"level": 0,
 						"alterId": 64,
 						"email": "test@test.com"
+					},
+					{
+						"id": "uu1id",
+						"level": 0,
+						"alterId": 64,
+						"email": "mp@test.com"
+					},
+					{
+						"id": "uu2id",
+						"level": 0,
+						"alterId": 64,
+						"email": "wj@test.com"
+					},
+					{
+						"id": "uu3id",
+						"level": 0,
+						"alterId": 64,
+						"email": "wsl@test.com"
+					},
+					{
+						"id": "uu4id",
+						"level": 0,
+						"alterId": 64,
+						"email": "dxb@test.com"
+					},
+					{
+						"id": "uu5id",
+						"level": 0,
+						"alterId": 64,
+						"email": "ycz@test.com"
 					}
 				]
 			},
@@ -91,10 +121,40 @@
 						"email": "admin@test.com"
 					},
 					{
-						"id": "dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce",
+						"id": "uu6id",
 						"level": 0,
 						"alterId": 64,
 						"email": "test@test.com"
+					},
+					{
+						"id": "uu1id",
+						"level": 0,
+						"alterId": 64,
+						"email": "mp@test.com"
+					},
+					{
+						"id": "uu2id",
+						"level": 0,
+						"alterId": 64,
+						"email": "wj@test.com"
+					},
+					{
+						"id": "uu3id",
+						"level": 0,
+						"alterId": 64,
+						"email": "wsl@test.com"
+					},
+					{
+						"id": "uu4id",
+						"level": 0,
+						"alterId": 64,
+						"email": "dxb@test.com"
+					},
+					{
+						"id": "uu5id",
+						"level": 0,
+						"alterId": 64,
+						"email": "ycz@test.com"
 					}]
 			},
 			"streamSettings": {
@@ -139,7 +199,7 @@
 		}],
   "transport": {
 		"dsSettings": {
-			"path": "/v2ray/ss-loop.sock"
+			"path": "/etc/v2ray/ss-loop.sock"
 		}
 	},
 	"routing": {
