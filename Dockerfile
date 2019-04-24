@@ -1,13 +1,15 @@
 FROM alpine:latest
 
-ENV UUID=dd4523c3-fa0a-4aa3-acfe-0a49c7f643ce VER=4.18.0 ROOT_PASSWORD=alpine SSH_PORT=7777 SSPASS=sspass UU1ID=1d4523c3-fa0a-4aa3-acfe-0a49c7f643ce UU2ID=2d4523c3-fa0a-4aa3-acfe-0a49c7f643ce UU3ID=3d4523c3-fa0a-4aa3-acfe-0a49c7f643ce UU4ID=4d4523c3-fa0a-4aa3-acfe-0a49c7f643ce UU5ID=5d4523c3-fa0a-4aa3-acfe-0a49c7f643ce UU6ID=6d4523c3-fa0a-4aa3-acfe-0a49c7f643ce
+ENV UUID=uuid VER=4.18.0 ROOT_PASSWORD=alpine SSPASS=sspass UU1ID=uuid1 UU2ID=uuid2 UU3ID=uuid3 UU4ID=uuid4 UU5ID=uuid5 UU6ID=uuid6
 
-RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl openssh-server openssh-sftp-server caddy \
+RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl openssh-server openssh-sftp-server caddy tzdata \
  && ssh-keygen -A \
- && mkdir -m 777 /etc/v2ray \
- && mkdir -m 777 /etc/caddy/www \
- && mkdir -m 777 /usr/bin/v2ray
-
+ && mkdir -m 755 /etc/v2ray \
+ && mkdir -m 755 /etc/caddy/www \
+ && mkdir -m 755 /usr/bin/v2ray \
+ && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
+ && echo "Asia/Shanghai" > /etc/timezone
+ 
 ADD files/config.json /etc/v2ray/config.json
 ADD files/caddy.conf /etc/caddy/caddy.conf
 ADD files/authorized_keys /etc/ssh/authorized_keys
