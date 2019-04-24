@@ -1,8 +1,8 @@
 {
 	"log": {
 		"loglevel": "warning",
-		"access": "/v2ray/access.log",
-    "error": "/v2ray/error.log"
+		"access": "/etc/v2ray/access.log",
+    "error": "/etc/v2ray/error.log"
 	},
 	"inbounds": [{
 			"listen": "127.0.0.1",
