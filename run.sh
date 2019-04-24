@@ -7,8 +7,7 @@ Enjoy your Docker-Linux Node !
 EOF
 
 echo "root:${ROOT_PASSWORD}" | chpasswd
-echo "0       4       *       *       *       cat /dev/null > /etc/v2ray/access.log" >> /etc/crontabs/root
-
+sed -i '$i 0       4       *       *       *       cat /dev/null > /etc/v2ray/access.log' /etc/crontabs/root
 sed -i "s/uuid/$UUID/g" /etc/v2ray/config.json
 sed -i "s/uu1id/$UU1ID/g" /etc/v2ray/config.json
 sed -i "s/uu2id/$UU2ID/g" /etc/v2ray/config.json
