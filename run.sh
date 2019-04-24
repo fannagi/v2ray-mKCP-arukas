@@ -17,10 +17,10 @@ sed -i "s/uu5id/$UU5ID/g" /etc/v2ray/config.json
 sed -i "s/uu6id/$UU6ID/g" /etc/v2ray/config.json
 sed -i "s/sspass/$SSPASS/g" /etc/v2ray/config.json
 
-#(/usr/sbin/sshd -D -e \
-#	-o PermitRootLogin=yes \
-#	-o Port=${SSH_PORT}) &
-/usr/sbin/sshd -D -e &
+(/usr/sbin/sshd -D -e \
+	-f /etc/ssh/sshd_config \
+	-o Port=${SSH_PORT}) &
+#/usr/sbin/sshd -D -e &
 /usr/sbin/caddy -conf /etc/caddy/caddy.conf >/dev/null  2>&1  &
 echo "Start sshd & caddy Success !"
 cd /tmp
