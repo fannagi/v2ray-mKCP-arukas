@@ -39,5 +39,4 @@ fi
 cd /usr/bin/v2ray
 #cp -f /config.json .
 chmod +x v2ray v2ctl
-/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json >/dev/null  2>&1  &
-echo "Start V2ray Success !"
+/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json
