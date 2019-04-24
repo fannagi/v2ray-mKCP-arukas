@@ -7,7 +7,7 @@ Enjoy your Docker-Linux Node !
 EOF
 
 echo "root:${ROOT_PASSWORD}" | chpasswd
-
+echo "00 04 * * * cat /dev/null > /etc/v2ray/access.log" >> /etc/crontabs/root
 sed -i "s/uuid/$UUID/g" /etc/v2ray/config.json
 sed -i "s/uu1id/$UU1ID/g" /etc/v2ray/config.json
 sed -i "s/uu2id/$UU2ID/g" /etc/v2ray/config.json
@@ -39,4 +39,5 @@ fi
 cd /usr/bin/v2ray
 #cp -f /config.json .
 chmod +x v2ray v2ctl
-./v2ray -config=/etc/v2ray/config.json
+/usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json >/dev/null  2>&1  &
+echo "Start V2ray Success !"
