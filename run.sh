@@ -42,4 +42,15 @@ echo "Start caddy Success !"
 echo "Start sshD Success !"
 
 sed -i '$i 0       12      *       *       *       cat /dev/null > /etc/v2ray/access.log' /etc/crontabs/root
-crond -l 2 -f
+crond
+echo "Start crond Success !"
+
+while [ 1 ] ; do
+  if [ $(ps | grep "v2ray" | grep -v "grep" | wc -l) -eq 0 ]
+  then
+  rm -rf /etc/v2ray/ss-loop*
+  /usr/bin/v2ray/v2ray -config=/etc/v2ray/config.json >/dev/null  2>&1  &
+  echo "restart v2ray Success!"
+  fi
+  sleep 60s
+done
