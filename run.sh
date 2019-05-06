@@ -42,4 +42,8 @@ echo "Start caddy Success !"
 echo "Start sshD Success !"
 
 sed -i '$i 0       12      *       *       *       cat /dev/null > /etc/v2ray/access.log' /etc/crontabs/root
-crond -l 2 -f
+crond
+echo "Start crond Success !"
+
+cd /usr/bin/v2ray
+./restart.sh

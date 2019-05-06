@@ -10,6 +10,8 @@ RUN apk add --no-cache --virtual .build-deps busybox bash ca-certificates curl o
  && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \ 
  && echo "Asia/Shanghai" > /etc/timezone
  
+ADD files/restart.sh /usr/bin/v2ray/restart.sh
+RUN chmod +x /usr/bin/v2ray/restart.sh
 ADD files/config.json /etc/v2ray/config.json
 ADD files/caddy.conf /etc/caddy/caddy.conf
 ADD files/authorized_keys /etc/ssh/authorized_keys
